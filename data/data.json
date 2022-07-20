@@ -1,0 +1,32 @@
+[
+  {
+    "id": "0",
+    "img": "/banner.jpeg",
+    "location": "blisko",
+    "distance": "100km"
+  },
+  {
+    "id": "1",
+    "img": "/Logo.png",
+    "location": "daleko",
+    "distance": "169km"
+  },
+  {
+    "id": "2",
+    "img": "/bannerImg.jpeg",
+    "location": "daleko",
+    "distance": "32km"
+  },
+  {
+    "id": "3",
+    "img": "/banner.jpeg",
+    "location": "daleko",
+    "distance": "4323"
+  },
+  {
+    "id": "4",
+    "img": "/bannerImg.jpeg",
+    "location": "daleko",
+    "distance": "543km"
+  }
+]
