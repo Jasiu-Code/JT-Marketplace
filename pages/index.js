@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
+import LargeCard from '../components/LargeCard';
 import MediumCard from '../components/MediumCard';
 import SmallCard from '../components/SmallCard';
 import data from '../data/data.json';
@@ -39,6 +40,11 @@ export default function Home() {
             ))}
             </div>
         </section>
+        <LargeCard
+        img="/Logo.png"
+        title="Sample Title"
+        decription="Awesome sample description"
+        buttonText="Get shit done"/>
       </main>
     </div>
   );
