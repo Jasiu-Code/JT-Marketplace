@@ -3,30 +3,35 @@
     "id": "0",
     "img": "/banner.jpeg",
     "location": "blisko",
-    "distance": "100km"
+    "distance": "100km",
+    "title": "Awesome title"
   },
   {
     "id": "1",
     "img": "/Logo.png",
     "location": "daleko",
-    "distance": "169km"
+    "distance": "169km",
+    "title": "Awesome title"
   },
   {
     "id": "2",
     "img": "/bannerImg.jpeg",
     "location": "daleko",
-    "distance": "32km"
+    "distance": "32km",
+    "title": "Awesome title"
   },
   {
     "id": "3",
     "img": "/banner.jpeg",
     "location": "daleko",
-    "distance": "4323"
+    "distance": "4323",
+    "title": "Awesome title"
   },
   {
     "id": "4",
     "img": "/bannerImg.jpeg",
     "location": "daleko",
-    "distance": "543km"
+    "distance": "543km",
+    "title": "Awesome title"
   }
 ]
