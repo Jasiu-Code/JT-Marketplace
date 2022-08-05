@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import InfoCard from '../components/InfoCard';
 
 export default function Search({ searchResults }) {
-  console.log('chujnia');
   const router = useRouter();
   const { location, startDate, endDate, numberOfGuests } = router.query;
 
@@ -55,7 +54,6 @@ export default function Search({ searchResults }) {
 }
 
 export async function getServerSideProps() {
-  console.log('chuje1');
   const searchResults = await fetch('https://links.papareact.com/isz').then(
     (res) => res.json()
   );
