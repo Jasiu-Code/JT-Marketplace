@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Logo from '../public/Logo.png';
 import {
   SearchIcon,
@@ -6,7 +7,9 @@ import {
   MenuIcon,
   UserCircleIcon,
   UsersIcon,
+  HomeIcon,
 } from '@heroicons/react/solid';
+
 import { useState } from 'react';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -16,6 +19,7 @@ import { useRouter } from 'next/router';
 
 function Header({ placeholder }) {
   const [searchInput, setSearchInput] = useState('');
+
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [numberOfGuests, setNumberOfGuests] = useState(1);
@@ -48,7 +52,7 @@ function Header({ placeholder }) {
   };
 
   return (
-    <header className='sticky top-0 z-50 w-full grid grid-cols-3 bg-slate-800 shadow-md p-5 md:px-10'>
+    <header className='sticky top-0 z-50 w-full grid grid-cols-3 bg-themeDark shadow-md p-5 md:px-10'>
       {/* LEFT */}
       <div
         onClick={() => router.push('/')}
@@ -68,24 +72,55 @@ function Header({ placeholder }) {
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          className='pl-2 bg-transparent flex-grow outline-none text-sm text-gray-200 placeholder-gray-400'
+          className='pl-2 bg-transparent flex-grow outline-none text-sm text-themeLight placeholder-gray-400'
           type='text'
-          placeholder={placeholder || 'Search here'}
+          placeholder={placeholder || 'Search'}
         />
-        <SearchIcon className='hidden h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:inline-flex md:mx-2' />
+        <SearchIcon className='hidden h-8 bg-themePrimary text-themeLight rounded-full p-2 cursor-pointer md:inline-flex md:mx-2' />
       </div>
       {/* RIGHT */}
-      <div className='flex items-center space-x-4 justify-end text-gray-500'>
-        <p className='hidden md:inline cursor-pointer text-white'>
+      <div className='flex items-center space-x-4 justify-end'>
+        <p className='hidden md:inline cursor-pointer text-themeLight'>
           Post your offer
         </p>
-        <GlobeAltIcon className='h-6 cursor-pointer text-white' />
-        <div className='flex items-center space-x-2 border-2 rounded-full text-white'>
-          <MenuIcon className='h-6 cursor-pointer' />
-          <UserCircleIcon className='h-6 cursor-pointer ' />
+        <div className='flex items-center space-x-4 border-2 rounded-full text-themeLight'>
+          <DropdownMenu.Root>
+            <DropdownMenu.Trigger>
+              <MenuIcon className='h-6 pl-1 md:pl-4 cursor-pointer text-themeLight' />
+            </DropdownMenu.Trigger>
+            <DropdownMenu.Portal>
+              <DropdownMenu.Content className='bg-themeLight w-full p-4 z-50 space-y-2 rounded-md shadow-md'>
+                <DropdownMenu.Item className='hoverCustom'>
+                  Login
+                </DropdownMenu.Item>
+                <DropdownMenu.Item className='hoverCustom'>
+                  Register
+                </DropdownMenu.Item>
+
+                <DropdownMenu.Sub>
+                  <DropdownMenu.SubTrigger className='hoverCustom'>
+                    Settings →
+                  </DropdownMenu.SubTrigger>
+                  <DropdownMenu.Portal>
+                    <DropdownMenu.SubContent className='bg-themeLight mx-2 p-4 z-50 space-y-2 rounded-md shadow-md'>
+                      <DropdownMenu.Item className='hoverCustom'>
+                        Profile
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item className='hoverCustom'>
+                        Post Offer
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Arrow />
+                    </DropdownMenu.SubContent>
+                  </DropdownMenu.Portal>
+                </DropdownMenu.Sub>
+              </DropdownMenu.Content>
+            </DropdownMenu.Portal>
+          </DropdownMenu.Root>
+          <HomeIcon className='h-6 pr-1 md:pr-4 cursor-pointer ' />
         </div>
       </div>
-      {searchInput && (
+
+      {/* {searchInput && (
         <div className='flex flex-col col-span-3 mx-auto'>
           <DateRangePicker
             ranges={[selectionRange]}
@@ -97,7 +132,7 @@ function Header({ placeholder }) {
             <h2 className='text-2xl flex-grow font-semibold text-white'>
               Number of specialist
             </h2>
-            <UsersIcon className='h-5 text-white' />
+            <UsersIcon className='h-5 text-themeLight' />
             <input
               value={numberOfGuests}
               onChange={(e) => setNumberOfGuests(e.target.value)}
@@ -115,7 +150,7 @@ function Header({ placeholder }) {
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </header>
   );
 }
