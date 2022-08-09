@@ -1,37 +1,44 @@
 [
   {
     "id": "0",
-    "img": "/banner.jpeg",
-    "location": "blisko",
-    "distance": "100km",
-    "title": "Awesome title"
+    "img": "/gamer.png",
+    "type": "Programmer",
+    "hourlyRate": "100",
+    "title": "React Develeoper"
   },
   {
     "id": "1",
-    "img": "/Logo.png",
-    "location": "daleko",
-    "distance": "169km",
-    "title": "Awesome title"
+    "img": "/man.png",
+    "type": "Layer",
+    "hourlyRate": "120",
+    "title": "Best Layer"
   },
   {
     "id": "2",
-    "img": "/bannerImg.jpeg",
-    "location": "daleko",
-    "distance": "32km",
-    "title": "Awesome title"
+    "img": "/woman.png",
+    "type": "Psychologist",
+    "hourlyRate": "110",
+    "title": "Let's talk"
   },
   {
     "id": "3",
-    "img": "/banner.jpeg",
-    "location": "daleko",
-    "distance": "4323",
-    "title": "Awesome title"
+    "img": "/profile.png",
+    "type": "Accountant",
+    "hourlyRate": "80",
+    "title": "I will count for you"
   },
   {
     "id": "4",
-    "img": "/bannerImg.jpeg",
-    "location": "daleko",
-    "distance": "543km",
-    "title": "Awesome title"
+    "img": "/teamwork.png",
+    "type": "Salesman",
+    "hourlyRate": "70",
+    "title": "Let us take care about our product"
+  },
+  {
+    "id": "5",
+    "img": "/mann.png",
+    "type": "Photograph",
+    "hourlyRate": "140",
+    "title": "Need foto?"
   }
 ]

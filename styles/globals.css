@@ -22,6 +22,6 @@ a {
     @apply px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out;
   }
   .hoverCustom {
-    @apply px-3 hover:bg-gray-400 rounded-md py-1;
+    @apply px-3 hover:bg-gray-400 rounded-md py-1 border-none outline-none;
   }
 }
