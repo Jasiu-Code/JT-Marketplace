@@ -6,7 +6,7 @@ import LargeCard from "../components/LargeCard";
 import MediumCard from "../components/MediumCard";
 import SmallCard from "../components/SmallCard";
 import data from "../data/data.json";
-
+///dsads
 export default function Home() {
   return (
     <div className="">
