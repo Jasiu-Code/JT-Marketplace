@@ -1,0 +1,27 @@
+[
+  {
+    "'id": "1",
+    "img": "/design.png",
+    "title": "Designers"
+  },
+  {
+    "'id": "2",
+    "img": "/doc.png",
+    "title": "Doctors"
+  },
+  {
+    "'id": "3",
+    "img": "/marketer.png",
+    "title": "Marketers"
+  },
+  {
+    "'id": "4",
+    "img": "/law.png",
+    "title": "Lawyers"
+  },
+  {
+    "'id": "5",
+    "img": "/prog.png",
+    "title": "Programmers"
+  }
+]

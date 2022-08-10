@@ -1,62 +1,62 @@
 import { useState } from "react";
 import ClientOnlyPortal from "./ClientOnlyPortal";
 
-export default function Modal() {
+export default function Modal({ name, styling }) {
   const [open, setOpen] = useState();
 
   return (
     <div>
-      <button type="button" className="button" onClick={() => setOpen(true)}>
-        Open Modal
+      <button type="button" className={styling} onClick={() => setOpen(true)}>
+        {name}
       </button>
       {open && (
         <ClientOnlyPortal selector="#modal">
-          <div className="backdrop">
-            <div className="modal">
-              <p>
-                This modal is rendered using{" "}
-                <a
-                  href="https://reactjs.org/docs/portals.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  portals
-                </a>
-                .
-              </p>
-              <button
-                type="button"
-                className="button"
-                onClick={() => setOpen(false)}
-              >
-                Close Modal
-              </button>
+          <div className="fixed inset-0 bg-opacity-80 bg-black z-50 ">
+            <div className="bg-themeLight absolute rounded-lg inset-0 md:mt-5 md:right-1/4 md:mb-5 md:left-1/4 ">
+              <form className="flex flex-col justify-center p-10 space-y-5 h-full">
+                <h1 className="text-2xl">Add New Offer:</h1>
+                <div className="flex flex-col">
+                  <label className="flex flex-col">
+                    Title:
+                    <input
+                      type="text"
+                      placeholder="Add offer title"
+                      className="border-b-2 pt-2 border-themePrimary outline-none "
+                    />
+                  </label>
+                </div>
+                <label className="flex flex-col">
+                  Description:
+                  <textarea
+                    rows="7"
+                    placeholder="Max 200 signs"
+                    className="border-b-2 pt-2 border-themePrimary outline-none resize-none"
+                  />
+                </label>
+
+                <label className="flex flex-col">
+                  Hourly rate:
+                  <input
+                    type="text"
+                    placeholder="Give your price "
+                    className="border-b-2 pt-2 border-themePrimary outline-none "
+                  />
+                </label>
+
+                <div className="flex justify-center space-x-10">
+                  <button type="submit" className="button text-themePrimary">
+                    Add Offer
+                  </button>
+                  <button
+                    type="button"
+                    className="button"
+                    onClick={() => setOpen(false)}
+                  >
+                    Close
+                  </button>
+                </div>
+              </form>
             </div>
-            <style jsx>{`
-              :global(body) {
-                overflow: hidden;
-              }
-
-              .backdrop {
-                position: fixed;
-                background-color: rgba(0, 0, 0, 0.7);
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-              }
-
-              .modal {
-                background-color: white;
-                position: absolute;
-                top: 10%;
-                right: 10%;
-                bottom: 10%;
-                left: 10%;
-                padding: 1em;
-                z-index: 1000;
-              }
-            `}</style>
           </div>
         </ClientOnlyPortal>
       )}
