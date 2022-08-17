@@ -4,7 +4,8 @@ import Logo from "../public/Logo.png";
 import { SearchIcon, MenuIcon, HomeIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import NewOfferModal from "./NewOfferModal";
+import LoginModal from "./LoginModal";
 
 function Header({ placeholder }) {
   const [searchInput, setSearchInput] = useState("");
@@ -24,7 +25,7 @@ function Header({ placeholder }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full grid grid-cols-3 bg-themeDark shadow-md p-5 md:px-10 overflow-hidden">
+    <header className="sticky top-0 z-40 w-full grid grid-cols-3 bg-themeDark shadow-md p-5 md:px-10 overflow-hidden">
       {/* LEFT */}
       <div
         onClick={() => router.push("/")}
@@ -52,15 +53,17 @@ function Header({ placeholder }) {
       </div>
       {/* RIGHT */}
       <div className="flex items-center space-x-4 justify-end">
-        <Link href="/newOffer">
-          <p className="hidden md:inline cursor-pointer text-themeLight">
-            Post your offer
-          </p>
-        </Link>
+        <NewOfferModal
+          name="Post your offer"
+          styling="hidden md:inline cursor-pointer text-themeLight"
+        />
+        <LoginModal name="Login" styling="text-themeLight" />
+
         <div className="flex items-center space-x-4 border-2 rounded-full text-themeLight">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
-              <MenuIcon className="h-6 pl-1 md:pl-4 cursor-pointer text-themeLight" />
+              {/* <MenuIcon className="h-6 pl-1 md:pl-4 cursor-pointer text-themeLight" /> */}
+              Home
             </DropdownMenu.Trigger>
             <DropdownMenu.Portal>
               <DropdownMenu.Content className="bg-themeLight w-full p-4 z-50 space-y-2 rounded-md shadow-md">
@@ -79,9 +82,6 @@ function Header({ placeholder }) {
                     <DropdownMenu.SubContent className="bg-themeLight mx-2 p-4 z-50 space-y-2 rounded-md shadow-md">
                       <DropdownMenu.Item className="hoverCustom">
                         Profile
-                      </DropdownMenu.Item>
-                      <DropdownMenu.Item className="hoverCustom">
-                        Post Offer
                       </DropdownMenu.Item>
                       <DropdownMenu.Arrow />
                     </DropdownMenu.SubContent>

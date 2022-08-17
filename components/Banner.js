@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import BannerImg from "../public/bannerImgClock.jpeg";
+import NewOfferModal from "./NewOfferModal";
 
 function Banner() {
   return (
@@ -17,15 +18,14 @@ function Banner() {
           Time is not returnable, nor refundale.
           <br /> But is tradable, before it comes.
         </p>
-        <div className="space-x-4">
+        <div className="space-x-4 flex justify-center">
           <button className="text-themeDark text-sm md:text-lg lg:text-2xl bg-themeLight px-6 py-2 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150">
             Hire!
           </button>
-          <Link href="/newOffer">
-            <button className="text-themePrimary text-sm md:text-lg lg:text-2xl bg-themeLight px-6 py-2 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150">
-              Post your Offer!
-            </button>
-          </Link>
+          <NewOfferModal
+            name="Post your Offer!"
+            styling="text-themePrimary text-sm md:text-lg lg:text-2xl bg-themeLight px-6 py-2 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
+          />
         </div>
       </div>
     </div>

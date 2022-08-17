@@ -6,7 +6,8 @@ import LargeCard from "../components/LargeCard";
 import MediumCard from "../components/MediumCard";
 import SmallCard from "../components/SmallCard";
 import data from "../data/data.json";
-///dsads
+import dataCategories from "../data/dataCategories.json";
+
 export default function Home() {
   return (
     <div className="">
@@ -48,18 +49,18 @@ export default function Home() {
           </div>
         </section>
         <section className="pb-5 border-b-2">
-          <h2 className="text-2xl font-semibold py-8">Find your specialist</h2>
+          <h2 className="text-2xl font-semibold py-8">Categories:</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3">
-            {data?.map(({ id, img, title }) => (
+            {dataCategories?.map(({ id, img, title }) => (
               <MediumCard key={id} img={img} title={title} />
             ))}
           </div>
         </section>
         <LargeCard
           img="/Logo.png"
-          title="Sample Title"
-          decription="Awesome sample description"
-          buttonText="Get shit done"
+          title="Get more info about Just Time"
+          decription="Please visit you information site to get more details"
+          buttonText="Go to page"
         />
       </main>
       <Footer />
