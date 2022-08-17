@@ -58,7 +58,6 @@ function Header({ placeholder }) {
           styling="hidden md:inline cursor-pointer text-themeLight"
         />
         <LoginModal name="Login" styling="text-themeLight" />
-
         <div className="flex items-center space-x-4 border-2 rounded-full text-themeLight">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>

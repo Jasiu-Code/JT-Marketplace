@@ -1,5 +1,6 @@
 import Image from "next/image";
-
+import Modal from "./Modal";
+import Link from "next/link";
 import BannerImg from "../public/bannerImgClock.jpeg";
 import NewOfferModal from "./NewOfferModal";
 
@@ -22,6 +23,7 @@ function Banner() {
           <button className="text-themeDark text-sm md:text-lg lg:text-2xl bg-themeLight px-6 py-2 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150">
             Hire!
           </button>
+
           <NewOfferModal
             name="Post your Offer!"
             styling="text-themePrimary text-sm md:text-lg lg:text-2xl bg-themeLight px-6 py-2 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
